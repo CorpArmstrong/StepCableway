@@ -1,0 +1,40 @@
+1)  From MainWindow::OnIdleHandler event!
+
+            if (flagStartTimerDelayCableWay1)
+			{
+				flagStartTimerDelayCableWay1 = false;			// From below Edit!
+				MainTimer::StartTimerDelayCableWay1Main();
+				MainTimer::StartTimer1TurnOffSiren_CableWay1Main();
+			}
+
+			if (flagDelayUseCard_RFID1)
+			{
+				MainTimer::StartTimerDelayUseCard_RFID1Main();
+
+				if (FlagAbonementWorkCableWay1)
+				{
+					this->label13->Visible = true;
+				}
+			}
+
+			//-------------------------------------------------------------------------------------
+			if (flagStartTimerDelayCableWay2)
+			{
+				flagStartTimerDelayCableWay2 = false;			// From below Edit!
+				MainTimer::StartTimerDelayCableWay2Main();
+				MainTimer::StartTimer1TurnOffSiren_CableWay2Main();
+			}
+
+			if (flagDelayUseCard_RFID2)
+			{
+				MainTimer::StartTimerDelayUseCard_RFID2Main();
+
+				if (FlagAbonementWorkCableWay2)
+				{
+					this->label20->Visible = true;
+				}
+			}
+
+
+2)  StartTimerDelayCableWay1Procedure calls StartTimer2TurnOffSiren_CableWay1Main
+    and handles time/money logic in arrays. Also writes data to back-files.
